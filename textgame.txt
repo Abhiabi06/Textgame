@@ -1,0 +1,116 @@
+import time
+
+def introduction():
+    print("Welcome to the Text Adventure Game!")
+    time.sleep(1)
+    print("You find yourself in a mysterious land filled with magic and danger.")
+    time.sleep(1)
+    print("Your mission is to find the legendary artifact known as the Crystal of Power.")
+    time.sleep(1)
+    print("Your journey begins now!")
+
+def make_choice(choices):
+    print("\nChoose your action:")
+    for i, choice in enumerate(choices, 1):
+        print(f"{i}. {choice}")
+
+    while True:
+        try:
+            choice = int(input("Enter the number of your choice: "))
+            if 1 <= choice <= len(choices):
+                return choice
+            else:
+                print("Invalid choice. Please try again.")
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
+def forest_path():
+    print("\nYou enter a dense forest.")
+    time.sleep(1)
+    print("As you walk deeper, you hear mysterious whispers.")
+    time.sleep(1)
+    choices = ["Follow the whispers.", "Ignore the whispers and continue."]
+    choice = make_choice(choices)
+
+    if choice == 1:
+        print("\nYou follow the whispers and discover a hidden path.")
+        time.sleep(1)
+        print("The path leads to a magical grove.")
+        time.sleep(1)
+        print("You encounter a mystical creature that offers guidance.")
+        time.sleep(1)
+        print("It provides you with a magical amulet to protect you on your journey.")
+    else:
+        print("\nYou decide to ignore the whispers and continue through the forest.")
+        time.sleep(1)
+        print("You come across a river with a rickety bridge.")
+        time.sleep(1)
+        print("Do you want to cross the bridge or find another way?")
+        choices = ["Cross the bridge.", "Find another way."]
+        choice = make_choice(choices)
+
+        if choice == 1:
+            print("\nYou cautiously cross the bridge and reach the other side safely.")
+        else:
+            print("\nYou decide to find another way and discover a hidden tunnel.")
+            time.sleep(1)
+            print("The tunnel leads to a clearing where you find a mysterious stone.")
+            time.sleep(1)
+            print("The stone grants you enhanced agility.")
+
+def mountain_path():
+    print("\nNow, you face a steep mountain path.")
+    time.sleep(1)
+    print("You see a cave entrance halfway up the mountain.")
+    time.sleep(1)
+    choices = ["Continue climbing the path.", "Enter the cave."]
+    choice = make_choice(choices)
+
+    if choice == 1:
+        print("\nYou continue climbing the path and reach the summit.")
+        time.sleep(1)
+        print("At the summit, you find a wise old wizard.")
+        time.sleep(1)
+        print("The wizard shares ancient knowledge and enhances your magical abilities.")
+    else:
+        print("\nYou enter the cave and discover a hidden chamber.")
+        time.sleep(1)
+        print("Inside the chamber, you find a magical staff.")
+        time.sleep(1)
+        print("The staff grants you the power of elemental manipulation.")
+
+def crystal_chamber():
+    print("\nYou finally reach the chamber where the Crystal of Power is kept.")
+    time.sleep(1)
+    print("However, the chamber is guarded by a powerful guardian.")
+    time.sleep(1)
+    choices = ["Use the magical amulet.", "Wield the magical staff.", "Attempt to negotiate."]
+    choice = make_choice(choices)
+
+    if choice == 1:
+        print("\nYou use the magical amulet, and its protective barrier deflects the guardian's attacks.")
+        time.sleep(1)
+        print("Seizing the opportunity, you grab the Crystal of Power and complete your quest.")
+        time.sleep(1)
+        print("Congratulations! You have successfully obtained the Crystal of Power!")
+    elif choice == 2:
+        print("\nYou wield the magical staff, channeling its elemental power.")
+        time.sleep(1)
+        print("After a fierce battle, you defeat the guardian and claim the Crystal of Power.")
+        time.sleep(1)
+        print("Congratulations! You have successfully obtained the Crystal of Power!")
+    else:
+        print("\nYou attempt to negotiate with the guardian, sharing your quest and intentions.")
+        time.sleep(1)
+        print("Surprisingly, the guardian accepts your plea and allows you to take the Crystal of Power.")
+        time.sleep(1)
+        print("Congratulations! You have successfully obtained the Crystal of Power!")
+
+def main():
+    introduction()
+    forest_path()
+    mountain_path()
+    crystal_chamber()
+
+if __name__ == "__main__":
+    main()
